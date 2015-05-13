@@ -14,10 +14,7 @@ public class ReadProperty
    //Return Property value
    public static String getProperty(String key)
    {
-      if(prop == null)
-      {
-         prop = loadProperty(PropertyFilePath,prop);
-      }
+      prop = loadProperty(PropertyFilePath,prop);
       return prop.getProperty(key);
    }
    

@@ -3,8 +3,6 @@ package com.automation.page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import com.automation.core.DataFile;
-import com.automation.core.ReadProperty;
 import com.automation.core.SeleniumCommands;
 
 public class PageFactory
@@ -34,8 +32,8 @@ public class PageFactory
       //logging in
       SeleniumCommands.waitForElementToExist(By.id("LoginForm_email"));
       SeleniumCommands.findElementByXpath("//*[@id='LoginForm_email']").click();
-      SeleniumCommands.findElementByXpath("//*[@id='LoginForm_email']").sendKeys(ReadProperty.getProperty("UID"));
-      SeleniumCommands.findElementByXpath("//*[@id='LoginForm_password']").sendKeys(ReadProperty.getProperty("PWD"));
+      SeleniumCommands.findElementByXpath("//*[@id='LoginForm_email']").sendKeys("xyz@gmail.com");
+      SeleniumCommands.findElementByXpath("//*[@id='LoginForm_password']").sendKeys("xyz");
       SeleniumCommands.findElementByXpath("//*[@id='qa-login-button']").click();
       SeleniumCommands.waitForElementToBeDisplayed(By.xpath("//*[@id='qa-my-acc-link']"));
    }
