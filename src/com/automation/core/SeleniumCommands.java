@@ -23,13 +23,11 @@ public final class SeleniumCommands {
    }
 
    public static void clickByName(String locator) {
-
       driver.findElement(By.name(locator));
 
    }
    
    public static void sendKeysByXpath(String wheelPickerXpath, String dataString) {
-      isElementPresentByXpath("//UIAPickerWheel");
       waitForElementToExist(By.xpath(wheelPickerXpath));
       driver.findElement(By.xpath(wheelPickerXpath)).sendKeys(dataString);
 
