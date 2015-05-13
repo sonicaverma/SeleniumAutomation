@@ -32,8 +32,8 @@ public class PageFactory
       //logging in
       SeleniumCommands.waitForElementToExist(By.id("LoginForm_email"));
       SeleniumCommands.findElementByXpath("//*[@id='LoginForm_email']").click();
-      SeleniumCommands.findElementByXpath("//*[@id='LoginForm_email']").sendKeys("sanjana.x.rawat@gmail.com");
-      SeleniumCommands.findElementByXpath("//*[@id='LoginForm_password']").sendKeys("outrageous");
+      SeleniumCommands.findElementByXpath("//*[@id='LoginForm_email']").sendKeys("xyz@gmail.com");
+      SeleniumCommands.findElementByXpath("//*[@id='LoginForm_password']").sendKeys("xyz");
       SeleniumCommands.findElementByXpath("//*[@id='qa-login-button']").click();
       SeleniumCommands.waitForElementToBeDisplayed(By.xpath("//*[@id='qa-my-acc-link']"));
    }
