@@ -17,7 +17,7 @@ public class MyOrder extends BaseClass
    @Test
    public void myOrderPage()
    {
-      pageFactory.getDashboardPage().gotToOrderPage().isOrderPageOpened().shoulBeTrue("My Order page is not displayed.");
+      pageFactory.getDashboardPage().gotToOrderPage().isOrderPageOpened().shouldBeEqual("Order page is not displayed.");
    }
 
 }

@@ -76,7 +76,10 @@ public final class SeleniumCommands {
    public static boolean isElementPresentByXpath(String locator) {
 
       return driver.findElement(By.xpath(locator)).isDisplayed();
-
+   }
+   
+   public static WebElement findElementByLinkName(String locator) {
+      return driver.findElement(By.linkText(locator));
    }
 
    public static boolean isElementPresentByName(String locator) {
@@ -100,6 +103,12 @@ public final class SeleniumCommands {
       Wait<WebDriver> wait = new WebDriverWait(driver,
             DEFAULT_WAIT_IN_SECONDS);
       wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
+   }
+   
+   public static void waitForElementToBeDisplayed(By locator) {
+      Wait<WebDriver> wait = new WebDriverWait(driver,
+            DEFAULT_WAIT_IN_SECONDS);
+      wait.until(ExpectedConditions.visibilityOf(driver.findElement(locator)));
    }
 
    public static void acceptAlert() {

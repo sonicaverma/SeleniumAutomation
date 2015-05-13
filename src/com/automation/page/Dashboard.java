@@ -12,15 +12,15 @@ public class Dashboard
    
    public Dashboard gotToOrderPage()
    {
-      SeleniumCommands.waitForElementToExist(By.xpath("//*[@href='/my/orders']"));
-      SeleniumCommands.findElementByXpath("//*[@href='/my/orders']").click();
-      SeleniumCommands.waitForElementToExist(By.xpath("//*[@class='page-name']"));
+      SeleniumCommands.waitForElementToExist(By.linkText("ORDERS"));
+      SeleniumCommands.findElementByLinkName("ORDERS").click();
+      SeleniumCommands.waitForElementToExist(By.xpath("//li[@class='active']/a[text()='Orders']"));
       return this;
    }
    
    public Validation isOrderPageOpened()
    {
-      return new Validation(SeleniumCommands.findElementByXpath("//*[@class='page-name']").getText().equalsIgnoreCase("My Orders"));
+      return new Validation(SeleniumCommands.findElementByXpath("//li[@class='active']/a").getText(),"ORDERS");
    }
    
 

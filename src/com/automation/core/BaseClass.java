@@ -32,12 +32,13 @@ public class BaseClass
    {
       driver.manage().window().maximize();
       driver.get(DataFile.BASE_URL);
-      SeleniumCommands.waitForElementToExist(By.xpath("//*[@href='http://www.myntra.com/?src=logo']"));
+      SeleniumCommands.waitForElementToExist(By.xpath("//*[@src='https://static.jabong.com/images/jlite/logo-new.png']"));
       // closing pop-up if it appears
-      String dialog = "//*[@class='get-app-wrapper']";
+      String dialog = "//*[@title='close']";
       if (SeleniumCommands.findElementByXpath(dialog).isDisplayed())
-         SeleniumCommands.findElementByXpath("//*[@class='close-wrapper shutdown-sprite close-banner']").click();
-      new Validation("Online Shopping: Shop Dress, Shoes, Jeans, Bags Online in India ", SeleniumCommands.getPageTitle());
+         SeleniumCommands.findElementByXpath(dialog).click();
+      System.out.println(SeleniumCommands.getPageTitle());
+      new Validation("Login Jabong.com", SeleniumCommands.getPageTitle()).shouldBeEqual("Login page is not opened.");
       testSetUp();
    }
 

@@ -30,18 +30,17 @@ public class PageFactory
    public void login()
    {
       //logging in
-      SeleniumCommands.waitForElementToExist(By.xpath("//div[@class='login']/a"));
-      SeleniumCommands.findElementByXpath("//div[@class='login']/a").click();
-      SeleniumCommands.findElementByXpath("//form[@class='signin']//div[@class='email']/input").sendKeys("sanjana.x.rawat@gmail.com");
-      SeleniumCommands.findElementByXpath("//form[@class='signin']//div[@class='password']/input").sendKeys("outrageous");
-      SeleniumCommands.findElementByXpath("//button[@name='signin']").click();
-      SeleniumCommands.waitForElementToDisappear(By.xpath("//*[@class='get-app-wrapper']"));
+      SeleniumCommands.waitForElementToExist(By.id("LoginForm_email"));
+      SeleniumCommands.findElementByXpath("//*[@id='LoginForm_email']").click();
+      SeleniumCommands.findElementByXpath("//*[@id='LoginForm_email']").sendKeys("sanjana.x.rawat@gmail.com");
+      SeleniumCommands.findElementByXpath("//*[@id='LoginForm_password']").sendKeys("outrageous");
+      SeleniumCommands.findElementByXpath("//*[@id='qa-login-button']").click();
+      SeleniumCommands.waitForElementToBeDisplayed(By.xpath("//*[@id='qa-my-acc-link']"));
    }
    
    public Dashboard getDashboardPage()
    {
-      SeleniumCommands.waitForElementToExist(By.xpath("//span[text()='My Myntra']"));
-      SeleniumCommands.findElementByXpath("//*[text()='My Myntra']").click(); 
+      SeleniumCommands.waitForElementToExist(By.xpath("//span[text()='My aCCOUNT']"));
       return dashboardPage;
    }
    
