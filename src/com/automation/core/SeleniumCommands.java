@@ -78,7 +78,7 @@ public final class SeleniumCommands {
       return driver.findElement(By.xpath(locator)).isDisplayed();
    }
    
-   public static WebElement findElementByLinkName(String locator) {
+   public static WebElement findElementByLinkText(String locator) {
       return driver.findElement(By.linkText(locator));
    }
 

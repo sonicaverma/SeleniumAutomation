@@ -14,6 +14,8 @@ public class PageFactory
    
    private static Dashboard dashboardPage = new Dashboard();
    
+   private static PersonalDetails personalDetailsPage = new PersonalDetails();
+   
    private static PageFactory pageFactory;
    
    public static PageFactory getInstance(){
@@ -44,6 +46,12 @@ public class PageFactory
    {
       SeleniumCommands.waitForElementToExist(By.xpath("//span[text()='My aCCOUNT']"));
       return dashboardPage;
+   }
+   
+   public PersonalDetails getPersonalDetailsPage()
+   {
+      SeleniumCommands.waitForElementToExist(By.xpath("//span[text()='PERSONAL DETAILS']"));
+      return personalDetailsPage;
    }
    
 }

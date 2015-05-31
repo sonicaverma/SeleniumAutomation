@@ -13,7 +13,7 @@ public class Dashboard
    public Dashboard gotToOrderPage()
    {
       SeleniumCommands.waitForElementToExist(By.linkText("ORDERS"));
-      SeleniumCommands.findElementByLinkName("ORDERS").click();
+      SeleniumCommands.findElementByLinkText("ORDERS").click();
       SeleniumCommands.waitForElementToExist(By.xpath("//li[@class='active']/a[text()='Orders']"));
       return this;
    }
